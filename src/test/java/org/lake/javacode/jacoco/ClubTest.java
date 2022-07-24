@@ -13,6 +13,12 @@ public class ClubTest {
         club.maxNumberOfAttendees = 100;
         club.numberOfEnrollment = 10;
         Assert.assertFalse(club.isEnrollmentFull());
+
+        club.maxNumberOfAttendees = 0;
+        Assert.assertFalse(club.isEnrollmentFull());
+
+        club.maxNumberOfAttendees = 1;
+        Assert.assertFalse(!club.isEnrollmentFull());
     }
 
 }
