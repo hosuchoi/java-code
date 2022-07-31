@@ -11,7 +11,7 @@ public class Book {
     public Book() {
     }
 
-    public Book(String a, String d, String e) {
+    private Book(String a, String d, String e) {
         this.a = a;
         this.d = d;
         this.e = e;
