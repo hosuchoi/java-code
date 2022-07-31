@@ -1,4 +1,4 @@
-package org.lake.reflection;
+package org.lake.javacode.reflection;
 
 public class Book {
 

@@ -1,4 +1,4 @@
-package org.lake.reflection;
+package org.lake.javacode.reflection;
 
 public class App {
 
@@ -11,7 +11,7 @@ public class App {
         Class<? extends Book> aClass = book.getClass();
 
         //문자열 내용뿐이 모를때는 FQCN (Full Qualified Class Name) 방식으로 접근
-        Class<?> aClass1 = Class.forName("org.lake.reflection.Book");
+        Class<?> aClass1 = Class.forName("org.lake.javacode.reflection.Book");
 
     }
 }
