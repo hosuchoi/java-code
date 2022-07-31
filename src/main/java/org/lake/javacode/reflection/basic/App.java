@@ -1,12 +1,14 @@
-package org.lake.javacode.reflection;
+package org.lake.javacode.reflection.basic;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Arrays;
 
 public class App {
 
-    public static void main(String[] args) throws ClassNotFoundException {
+    public static void main(String[] args) throws Exception {
         //type을 통한 접근
         Class<Book> bookClass1 = Book.class;
 
@@ -15,7 +17,7 @@ public class App {
         Class<? extends Book> aClass = book2.getClass();
 
         //문자열 내용뿐이 모를때는 FQCN (Full Qualified Class Name) 방식으로 접근
-        Class<?> aClass3 = Class.forName("org.lake.javacode.reflection.Book");
+        Class<?> aClass3 = Class.forName("org.lake.javacode.reflection.basic.Book");
 
         /**
          * Reflection Filed
@@ -78,5 +80,39 @@ public class App {
          */
         System.out.println("==========getInterfaces()");
         Arrays.stream(MyBook.class.getInterfaces()).forEach(System.out::println);
+
+        /**
+         * Reflection set
+         */
+        Class<?> moodClass = Class.forName("org.lake.javacode.reflection.basic.Mood");
+//        moodClass.newInstance(); //deprecated 되었으므로 객체 생성시 이방법은 비추!! 아래 생성자 호출 방식으로 객체 생성
+        Constructor<?> constructor = moodClass.getConstructor(String.class);
+        Mood mood = (Mood) constructor.newInstance("myMood");
+        System.out.println(mood);
+
+        /**
+         * Reflection Set Filed
+         */
+        Field a = Mood.class.getDeclaredField("A");
+        System.out.println(a.get(null)); //A는 static 변수이므로 null값 넘겨줌 (static 변수는 모든 객체가 공유하는 변수로 특정 객체 불필요함)
+        a.set(null, "AAAAA"); //set도 마찬가지로 null을 넘겨줌
+        System.out.println(a.get(null));
+
+        Field b = Mood.class.getDeclaredField("B");
+        b.setAccessible(true); //private을 접근하기 위한 설정
+        System.out.println(b.get(mood)); //기본 변수의 경우 사용될 객체를 넘겨줘야됨
+        b.set(mood, "BBBBB");
+        System.out.println(b.get(mood));
+
+        /**
+         * Reflection Set Method
+         */
+        Method c = Mood.class.getDeclaredMethod("c"); //파라미터가 없는 메서드 호출
+        c.setAccessible(true);
+        c.invoke(mood);
+
+        Method sum = Mood.class.getDeclaredMethod("sum", int.class, int.class); //파라미터와 리턴타입이 있는 메서드 호출
+        int result = (int)sum.invoke(mood,2,3);
+        System.out.println(result);
     }
 }
