@@ -1,4 +1,4 @@
-package org.lake.javacode.proxy;
+package org.lake.javacode.proxy.jpaproxy;
 
 import com.sun.istack.NotNull;
 import lombok.*;
