@@ -1,4 +1,6 @@
 package org.lake.javacode.proxy;
 
-public class BookRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface PookRepository extends JpaRepository<Pook, Integer> {
 }

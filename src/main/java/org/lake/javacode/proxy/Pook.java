@@ -13,7 +13,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Book {
+public class Pook {
 
     @Id @GeneratedValue @NotNull
     private Integer id;
