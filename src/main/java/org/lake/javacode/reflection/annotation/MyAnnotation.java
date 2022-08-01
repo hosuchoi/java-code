@@ -24,8 +24,7 @@ import java.lang.annotation.*;
  * 스프링도 내부적으로 Reflection 등을 활용하여 어노테이션이 붙은 놈들만 가져옵니다.
  *
  * CLASS 정책
- * 그러면, CLASS 정책은 왜 필요한지 궁금하실거에요. "아니 Reflection 같은걸로 정보를 얻을수도 없으면서 왜 필요한거지?" 말이죠 ㅎㅎ
- * 그런데 이미 '참고사이트'에 첨부해주신 스택오버플로우('retention-of-java-type-checker-annotations') 글에 설명이 되어있습니다. 
+ * 그러면, CLASS 정책은 왜 필요한지 궁금하실거에요. "아니 Reflection 같은걸로 정보를 얻을수도 없으면서 왜 필요한거지?"
  * 인텔리제이를 써보셨다면, @NonNull 등이 붙어있는 경우 null 값을 넣게되면 노랑색 경고로 알려줍니다.
  * "아니 그러면 SOURCE로 해도 될거 같은데?" 싶으실텐데요, 
  * 중요한점은 Maven/Gradle로 다운받은 라이브러리와 같이 jar 파일에는 소스가 포함되어있지 않다는 점입니다. 
