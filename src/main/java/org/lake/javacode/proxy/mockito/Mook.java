@@ -1,7 +1,11 @@
-package org.lake.javacode.proxy.jpaproxy;
+package org.lake.javacode.proxy.mockito;
+
 
 import com.sun.istack.NotNull;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,11 +17,15 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Pook {
+public class Mook {
 
-    @Id @GeneratedValue @NotNull
+    @Id
+    @GeneratedValue
+    @NotNull
     private Integer id;
 
     @Column
     private String title;
+
+
 }

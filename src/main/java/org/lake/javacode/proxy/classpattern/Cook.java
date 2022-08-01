@@ -1,4 +1,4 @@
-package org.lake.javacode.proxy.pattern;
+package org.lake.javacode.proxy.classpattern;
 
 
 import com.sun.istack.NotNull;
@@ -17,7 +17,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Look {
+public class Cook {
 
     @Id
     @GeneratedValue
@@ -26,6 +26,4 @@ public class Look {
 
     @Column
     private String title;
-
-
 }

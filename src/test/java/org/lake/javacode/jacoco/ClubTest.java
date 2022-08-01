@@ -8,7 +8,7 @@ import static org.junit.Assert.*;
 public class ClubTest {
 
     @Test
-    public void isFull(){
+    public void isFull() {
         Club club = new Club();
         club.maxNumberOfAttendees = 100;
         club.numberOfEnrollment = 10;

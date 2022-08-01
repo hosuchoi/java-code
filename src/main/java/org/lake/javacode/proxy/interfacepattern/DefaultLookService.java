@@ -1,8 +1,8 @@
-package org.lake.javacode.proxy.pattern;
+package org.lake.javacode.proxy.interfacepattern;
 
-public class DefaultLookService implements LookService{
+public class DefaultLookService implements LookService {
 
-    public void rent(Look look){
+    public void rent(Look look) {
         System.out.println("rent: " + look.getTitle() + "");
     }
 

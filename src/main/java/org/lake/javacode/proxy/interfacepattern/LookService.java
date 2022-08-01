@@ -1,4 +1,4 @@
-package org.lake.javacode.proxy.pattern;
+package org.lake.javacode.proxy.interfacepattern;
 
 public interface LookService {
     void rent(Look look);
