@@ -1,4 +1,4 @@
-package org.lake.javacode.proxy.pattern;
+package org.lake.javacode.proxy.interfacepattern;
 
 import org.junit.Test;
 
